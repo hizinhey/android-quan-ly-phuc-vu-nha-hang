@@ -2,15 +2,21 @@ package com.example.quanlyphucvunhahang.models.modelsEntity;
 
 public class TaiKhoanEntity {
     //Thuoc tinh
+
+    private String ID;
     private String user;
     private String password;
     private int phanQuyen;
 
     public TaiKhoanEntity(){}
-    public TaiKhoanEntity(String user, String password, int phanQuyen){
+    public TaiKhoanEntity(String ID, String user, String password, int phanQuyen){
         this.user = user;
         this.password = password;
         this.phanQuyen = phanQuyen;
+    }
+
+    public String getID() {
+        return ID;
     }
 
     public String getUser() {
@@ -23,6 +29,10 @@ public class TaiKhoanEntity {
 
     public int getPhanQuyen() {
         return phanQuyen;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public void setUser(String user) {

@@ -3,6 +3,7 @@ package com.example.quanlyphucvunhahang.models.modelsEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.TaiKhoanEntity;
 
 public class KhachHangEntity {
+    private String ID;
     private TaiKhoanEntity taiKhoan;
     private String hoTen;
     private String sdt;
@@ -10,7 +11,8 @@ public class KhachHangEntity {
     private String email;
 
     public KhachHangEntity(){}
-    public KhachHangEntity(TaiKhoanEntity taiKhoan, String hoTen, String sdt, String diaChi, String email) {
+    public KhachHangEntity(String ID, TaiKhoanEntity taiKhoan, String hoTen, String sdt, String diaChi, String email) {
+        this.ID = ID;
         this.taiKhoan = taiKhoan;
         this.hoTen = hoTen;
         this.sdt = sdt;
@@ -18,20 +20,32 @@ public class KhachHangEntity {
         this.email = email;
     }
 
+    public String getID() {
+        return ID;
+    }
+
     public TaiKhoanEntity getTaiKhoan() {
         return taiKhoan;
     }
+
     public String getHoTen() {
         return hoTen;
     }
+
     public String getSdt() {
         return sdt;
     }
+
     public String getDiaChi() {
         return diaChi;
     }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public void setTaiKhoan(TaiKhoanEntity taiKhoan) {
