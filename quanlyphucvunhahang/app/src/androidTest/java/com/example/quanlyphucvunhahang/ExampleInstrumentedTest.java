@@ -25,3 +25,5 @@ public class ExampleInstrumentedTest {
         assertEquals("com.example.quanlyphucvunhahang", appContext.getPackageName());
     }
 }
+
+/**test**/
