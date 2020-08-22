@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:icon="@drawable/icons8_home_48_filled"
+        android:title="Nhà hàng"/>
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/icons8_food_and_wine_48_filled"
+        android:title="Bữa ăn"/>
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/icons8_activity_history_48_filled"
+        android:title="Lịch sử"/>
+    <item
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:icon="@drawable/icons8_user_48_filled"
+        android:title="Thông tin"/>
+</menu>

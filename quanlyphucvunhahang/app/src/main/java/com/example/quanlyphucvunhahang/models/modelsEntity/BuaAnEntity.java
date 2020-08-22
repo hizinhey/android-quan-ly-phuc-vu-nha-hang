@@ -1,7 +1,5 @@
 package com.example.quanlyphucvunhahang.models.modelsEntity;
 
-import com.example.quanlyphucvunhahang.models.modelsEntity.ChiTietBuaAn;
-import com.example.quanlyphucvunhahang.models.modelsEntity.KhachHangEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,13 +8,13 @@ public class BuaAnEntity {
     private int banAn;
     private List<ChiTietBuaAn> listChiTietBuaAn;
     private int hinhThucThanhToan;
-    private KhachHangEntity khachHang;
+    private TaiKhoanEntity khachHang;
     private String nhanXet;
     private int trangThai;
 
     public BuaAnEntity(){}
     public BuaAnEntity(String ID, int banAn, List<ChiTietBuaAn> listChiTietBuaAn,
-                       int hinhThucThanhToan, KhachHangEntity khachHang, String nhanXet,
+                       int hinhThucThanhToan, TaiKhoanEntity khachHang, String nhanXet,
                        int trangThai) {
         this.ID = ID;
         this.banAn = banAn;
@@ -43,11 +41,11 @@ public class BuaAnEntity {
         this.trangThai = trangThai;
     }
 
-    public KhachHangEntity getKhachHang() {
+    public TaiKhoanEntity getKhachHang() {
         return khachHang;
     }
 
-    public void setKhachHang(KhachHangEntity khachHang) {
+    public void setKhachHang(TaiKhoanEntity khachHang) {
         this.khachHang = khachHang;
     }
 

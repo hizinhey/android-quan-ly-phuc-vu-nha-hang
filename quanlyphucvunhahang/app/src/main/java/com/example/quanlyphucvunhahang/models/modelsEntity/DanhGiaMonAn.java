@@ -3,18 +3,18 @@ package com.example.quanlyphucvunhahang.models.modelsEntity;
 import java.util.Date;
 
 public class DanhGiaMonAn {
-    private KhachHangEntity khachHang;
+    private TaiKhoanEntity khachHang;
     private String noiDung;
     private Date ngayTao;
 
     public DanhGiaMonAn(){}
-    public DanhGiaMonAn(KhachHangEntity khachHang, String noiDung, Date ngayTao){
+    public DanhGiaMonAn(TaiKhoanEntity khachHang, String noiDung, Date ngayTao){
         this.khachHang = khachHang;
         this.noiDung = noiDung;
         this.ngayTao = ngayTao;
     }
 
-    public KhachHangEntity getKhachHang() {
+    public TaiKhoanEntity getKhachHang() {
         return khachHang;
     }
 
@@ -26,7 +26,7 @@ public class DanhGiaMonAn {
         return ngayTao;
     }
 
-    public void setKhachHang(KhachHangEntity khachHang) {
+    public void setKhachHang(TaiKhoanEntity khachHang) {
         this.khachHang = khachHang;
     }
 

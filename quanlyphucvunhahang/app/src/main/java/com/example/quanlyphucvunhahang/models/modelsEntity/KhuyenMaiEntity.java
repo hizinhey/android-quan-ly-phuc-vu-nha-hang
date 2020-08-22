@@ -2,7 +2,7 @@ package com.example.quanlyphucvunhahang.models.modelsEntity;
 
 import java.util.Date;
 
-public class KhuyenMaiEntity {
+public class KhuyenMaiEntity{
 
     // Constructor
     public KhuyenMaiEntity(){};
@@ -17,7 +17,6 @@ public class KhuyenMaiEntity {
 
     // Function
     /* Thuong Entity khong can function*/
-
 
     // Getter and Setter
     public String getID() {

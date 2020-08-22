@@ -6,6 +6,10 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     defaultConfig {
         applicationId "com.example.quanlyphucvunhahang"
         minSdkVersion 26
@@ -30,9 +34,17 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
+
+    implementation group: 'org.riversun', name: 'java-promise', version: '1.1.0'
 
     // Retrofit2
     implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.9.0'
@@ -42,11 +54,14 @@ dependencies {
 
     // Firebase component
     //analytics
-    implementation 'com.google.firebase:firebase-analytics:17.4.4'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
     //cloud firestore
     implementation 'com.google.firebase:firebase-firestore:21.5.0'
     //storage
     implementation 'com.google.firebase:firebase-storage:19.1.1'
     //authentication
     implementation 'com.google.firebase:firebase-auth:19.3.2'
+
+    // material
+    implementation 'com.google.android.material:material:1.2.0'
 }

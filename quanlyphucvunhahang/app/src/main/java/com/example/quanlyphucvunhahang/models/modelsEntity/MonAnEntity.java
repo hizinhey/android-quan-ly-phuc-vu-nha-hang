@@ -8,80 +8,78 @@ import java.util.List;
 
 public class MonAnEntity {
     private String ID;
-    private List<DanhGiaMonAn> listDanhGia;
-    private List<GiaMonAn> listGia;
+    private Float gia;
     private String tenMonAn;
     private String moTa;
     private KhuyenMaiEntity khuyenMai;
     private NhomMonAnEntity nhomMonAn;
+    private List<String> linkHinhAnh;
 
     public MonAnEntity() {}
-    public MonAnEntity(String ID, List<DanhGiaMonAn> listDanhGia, List<GiaMonAn> listGia,
-                       String tenMonAn, String moTa, KhuyenMaiEntity khuyenMai,
-                       NhomMonAnEntity nhomMonAn ) {
+
+    public MonAnEntity(String ID, Float gia, String tenMonAn, String moTa, KhuyenMaiEntity khuyenMai, NhomMonAnEntity nhomMonAn, List<String> linkHinhAnh) {
         this.ID = ID;
-        this.listDanhGia = listDanhGia;
-        this.listGia = listGia;
+        this.gia = gia;
         this.tenMonAn = tenMonAn;
         this.moTa = moTa;
         this.khuyenMai = khuyenMai;
         this.nhomMonAn = nhomMonAn;
+        this.linkHinhAnh = linkHinhAnh;
     }
 
     public String getID() {
         return ID;
     }
 
-    public List<DanhGiaMonAn> getListDanhGia() {
-        return listDanhGia;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
-    public List<GiaMonAn> getListGia() {
-        return listGia;
+    public Float getGia() {
+        return gia;
+    }
+
+    public void setGia(Float gia) {
+        this.gia = gia;
     }
 
     public String getTenMonAn() {
         return tenMonAn;
     }
 
-    public String getMoTa() {
-        return moTa;
-    }
-
-    public KhuyenMaiEntity getKhuyenMai() {
-        return khuyenMai;
-    }
-
-    public NhomMonAnEntity getNhomMonAn() {
-        return nhomMonAn;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
     public void setTenMonAn(String tenMonAn) {
         this.tenMonAn = tenMonAn;
     }
 
-    public void setListDanhGia(List<DanhGiaMonAn> listDanhGia) {
-        this.listDanhGia = listDanhGia;
-    }
-
-    public void setListGia(List<GiaMonAn> listGia) {
-        this.listGia = listGia;
+    public String getMoTa() {
+        return moTa;
     }
 
     public void setMoTa(String moTa) {
         this.moTa = moTa;
     }
 
+    public KhuyenMaiEntity getKhuyenMai() {
+        return khuyenMai;
+    }
+
     public void setKhuyenMai(KhuyenMaiEntity khuyenMai) {
         this.khuyenMai = khuyenMai;
+    }
+
+    public NhomMonAnEntity getNhomMonAn() {
+        return nhomMonAn;
     }
 
     public void setNhomMonAn(NhomMonAnEntity nhomMonAn) {
         this.nhomMonAn = nhomMonAn;
     }
 
+    public List<String> getLinkHinhAnh() {
+        return linkHinhAnh;
+    }
+
+    public void setLinkHinhAnh(List<String> linkHinhAnh) {
+        this.linkHinhAnh = linkHinhAnh;
+    }
 }
