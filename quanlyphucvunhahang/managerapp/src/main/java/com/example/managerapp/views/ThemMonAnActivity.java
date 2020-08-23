@@ -1,15 +1,12 @@
-package com.example.quanlyphucvunhahang.views;
+package com.example.managerapp.views;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.content.Intent;
 
-import com.example.quanlyphucvunhahang.R;
+import com.example.managerapp.R;
 
 public class ThemMonAnActivity extends Activity {
 
