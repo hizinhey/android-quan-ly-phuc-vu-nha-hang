@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#42CA91"
-    tools:context=".views.ThemMonAn">
+    tools:context=".views.ThemMonAnActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view"
-        android:layout_width="675dp"
-        android:layout_height="837dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="30dp"
@@ -27,9 +27,9 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="100dp"
-            android:layout_marginEnd="273dp"
+            android:layout_marginEnd="30dp"
             android:text="Thêm món ăn mới"
             android:textColor="#D36E6E"
             android:textSize="36sp"
@@ -40,8 +40,8 @@
 
         <EditText
             android:id="@+id/editText4"
-            android:layout_width="400"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="100dp"
@@ -56,8 +56,8 @@
 
         <EditText
             android:id="@+id/editText3"
-            android:layout_width="400"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="100dp"
@@ -72,8 +72,8 @@
 
         <EditText
             android:id="@+id/editText2"
-            android:layout_width="400"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="100dp"
@@ -88,8 +88,8 @@
 
         <EditText
             android:id="@+id/editText1"
-            android:layout_width="400"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="70dp"
             android:layout_marginEnd="100dp"

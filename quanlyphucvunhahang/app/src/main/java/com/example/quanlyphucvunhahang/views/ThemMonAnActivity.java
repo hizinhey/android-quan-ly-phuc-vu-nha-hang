@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 import com.example.quanlyphucvunhahang.R;
 
-public class ThemMonAn extends Activity {
+public class ThemMonAnActivity extends Activity {
 
     EditText editTen, editNhom, editGia, editMoTa;
     Button btnAdd;
