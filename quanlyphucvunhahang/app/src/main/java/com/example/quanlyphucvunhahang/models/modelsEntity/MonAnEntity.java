@@ -13,11 +13,11 @@ public class MonAnEntity {
     private String moTa;
     private KhuyenMaiEntity khuyenMai;
     private NhomMonAnEntity nhomMonAn;
-    private List<String> linkHinhAnh;
+    private String linkHinhAnh;
 
     public MonAnEntity() {}
 
-    public MonAnEntity(String ID, Float gia, String tenMonAn, String moTa, KhuyenMaiEntity khuyenMai, NhomMonAnEntity nhomMonAn, List<String> linkHinhAnh) {
+    public MonAnEntity(String ID, Float gia, String tenMonAn, String moTa, KhuyenMaiEntity khuyenMai, NhomMonAnEntity nhomMonAn, String linkHinhAnh) {
         this.ID = ID;
         this.gia = gia;
         this.tenMonAn = tenMonAn;
@@ -75,11 +75,11 @@ public class MonAnEntity {
         this.nhomMonAn = nhomMonAn;
     }
 
-    public List<String> getLinkHinhAnh() {
+    public String getLinkHinhAnh() {
         return linkHinhAnh;
     }
 
-    public void setLinkHinhAnh(List<String> linkHinhAnh) {
+    public void setLinkHinhAnh(String linkHinhAnh) {
         this.linkHinhAnh = linkHinhAnh;
     }
 }

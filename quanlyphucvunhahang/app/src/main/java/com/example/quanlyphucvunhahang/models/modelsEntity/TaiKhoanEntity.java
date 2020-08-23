@@ -2,7 +2,6 @@ package com.example.quanlyphucvunhahang.models.modelsEntity;
 
 public class TaiKhoanEntity {
     //Thuoc tinh
-
     private String ID;
     private String user;
     private String ten;
@@ -10,6 +9,10 @@ public class TaiKhoanEntity {
     private String diachi;
     private String sdt;
     private int phanQuyen;
+
+    public TaiKhoanEntity() {
+
+    }
 
     public String getID() {
         return ID;

@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:elevation="20dp"
+            android:padding="10dp"
+            android:background="@drawable/border_with_shadow">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/txtMealStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:text="Chưa có bữa ăn" />
+
+            <Button
+                android:id="@+id/txtMealAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtMealStatus"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="75dp"
+                android:layout_marginTop="8dp"
+                android:text="Thêm bữa ăn" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:elevation="20dp"
+            android:padding="8dp"
+            android:background="@drawable/border_with_shadow">
+            <TextView
+                android:id="@+id/lblMealTenKhachHang"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Tên khách hàng" />
+            <TextView
+                android:id="@+id/lblMealBanAn"
+                android:layout_below="@+id/lblMealTenKhachHang"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Bàn: 1A" />
+
+            <TextView
+                android:id="@+id/lblMealTrangThai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMealBanAn"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp"
+                android:text="Trạng thái:" />
+            <TextView
+                android:id="@+id/lblMealHinhThucThanhToan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMealTrangThai"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp"
+                android:text="Hình Thức thanh toán:" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_with_shadow">
+            <TextView
+                android:id="@+id/lblmMealDanhSachMonAn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#ffffff"
+                android:text="DANH SÁCH MÓN ĂN"
+                android:gravity="center"
+                android:textSize="26sp"
+                android:background="@color/colorPrimary"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcMealDanhSAchMonAn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/lblmMealDanhSachMonAn"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

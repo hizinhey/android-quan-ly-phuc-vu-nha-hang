@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border_with_shadow"
+        android:elevation="25dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imgDetailMonAn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/lblDetailMonAnTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imgDetailMonAn"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/imgDetailMonAn"
+            android:gravity="center_vertical"
+            android:text="Bánh cuốn vị sữa chua"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:elevation="25dp"
+        android:padding="8dp"
+        android:background="@drawable/border_with_shadow">
+        <TextView
+            android:id="@+id/lblDetailMonAnNhomMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:text="Loại: Món chính"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/lblDetailMonAnMota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDetailMonAnNhomMonAn"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:text="Mô tả: không có gì mô tả, nhưng vẫn phải mô tả một cái gì đó, mà không biết là cái gì"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/lblDetailMonAnGia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDetailMonAnMota"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:text="Giá: 99$"
+            android:textSize="16sp"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_detailMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/lblDetailMonAnGia">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imgDetailMonAnKhuyenMai"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="50dp"/>
+                <TextView
+                    android:id="@+id/lblKhuyenMai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignTop="@id/imgDetailMonAnKhuyenMai"
+                    android:layout_toEndOf="@id/imgDetailMonAnKhuyenMai"
+                    android:layout_alignParentEnd="true"/>
+
+                <TextView
+                    android:id="@+id/lblKhuyenMaiDate"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblKhuyenMai"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/imgDetailMonAnKhuyenMai" />
+                <TextView
+                    android:id="@+id/lblKhuyenMaMota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblKhuyenMaiDate"
+                    android:layout_toEndOf="@id/imgDetailMonAnKhuyenMai"
+                    android:layout_alignParentEnd="true"/>
+
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnDetailMonAnAdd"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview_detailMonAn"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="48dp"
+            android:text="Thêm vào bữa ăn"/>
+    </RelativeLayout>
+</LinearLayout>

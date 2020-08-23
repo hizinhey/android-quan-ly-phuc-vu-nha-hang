@@ -41,9 +41,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation "android.arch.lifecycle:extensions:1.0.0"
-    annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
-
     implementation group: 'org.riversun', name: 'java-promise', version: '1.1.0'
 
     // Retrofit2
@@ -54,7 +51,7 @@ dependencies {
 
     // Firebase component
     //analytics
-    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'com.google.firebase:firebase-analytics:17.4.4'
     //cloud firestore
     implementation 'com.google.firebase:firebase-firestore:21.5.0'
     //storage
@@ -64,4 +61,12 @@ dependencies {
 
     // material
     implementation 'com.google.android.material:material:1.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:4.8.0"
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
 }

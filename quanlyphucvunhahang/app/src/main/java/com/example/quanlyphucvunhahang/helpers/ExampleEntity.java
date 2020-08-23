@@ -24,10 +24,6 @@ public class ExampleEntity {
         return new BuaAnEntity();
     }
     public static MonAnEntity createExampleMonAn(String id){
-        ArrayList<String> a = new ArrayList<>();
-        a.add("x1");
-        a.add("x2");
-        a.add("x3");
         return new MonAnEntity(
                 id,
                 Float.parseFloat("500000"),
@@ -35,7 +31,7 @@ public class ExampleEntity {
                 "Sườn rưới sốt me đậm vị hơn cho bữa ăn ngon",
                 ExampleEntity.createExampleKhuyenMai("KM0000000001"),
                 new NhomMonAnEntity("NA0000000001", "Bữa chính"),
-                a
+                "/abc.jpg"
         );
     }
 }

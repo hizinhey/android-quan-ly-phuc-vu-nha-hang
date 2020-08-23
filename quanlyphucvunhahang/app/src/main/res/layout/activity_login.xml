@@ -7,7 +7,7 @@
     android:background="@color/colorMain">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/centerView"
+        android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="45dp"
@@ -15,6 +15,7 @@
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="200dp"
         android:background="@drawable/border_with_shadow"
+        android:elevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -35,6 +36,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
+
             android:layout_width="301dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -45,6 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLoginUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -53,6 +56,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
+
             android:layout_width="301dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -61,6 +65,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLoginPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -72,10 +77,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:paddingHorizontal="16dp"
             android:text="Đăng nhập"
+            android:elevation="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"/>
 
         <CheckedTextView
             android:id="@+id/checkedTextView"
