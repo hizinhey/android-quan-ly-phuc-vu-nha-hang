@@ -5,6 +5,8 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModelStore;
+import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.example.quanlyphucvunhahang.models.modelsEntity.BuaAnEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.KhuyenMaiEntity;
@@ -15,7 +17,7 @@ import com.example.quanlyphucvunhahang.models.modelsEntity.ThucDonEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeViewModel extends AndroidViewModel {
+public class HomeViewModel extends AndroidViewModel{
     private MutableLiveData<TaiKhoanEntity> mTaiKhoan = new MutableLiveData<>();
     private MutableLiveData<BuaAnEntity> mBuaAn = new MutableLiveData<>();
     private MutableLiveData<List<MonAnEntity>> mListMonAnKhaiVi = new MutableLiveData<>();
@@ -112,4 +114,5 @@ public class HomeViewModel extends AndroidViewModel {
     public void setIsReady(Boolean isReady) {
         this.isReady.setValue(isReady);
     }
+
 }

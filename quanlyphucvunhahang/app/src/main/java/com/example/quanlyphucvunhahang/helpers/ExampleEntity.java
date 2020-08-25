@@ -1,12 +1,11 @@
 package com.example.quanlyphucvunhahang.helpers;
 
 import com.example.quanlyphucvunhahang.models.modelsEntity.BuaAnEntity;
-import com.example.quanlyphucvunhahang.models.modelsEntity.ChiTietBuaAn;
 import com.example.quanlyphucvunhahang.models.modelsEntity.KhuyenMaiEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.MonAnEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.NhomMonAnEntity;
+import com.example.quanlyphucvunhahang.models.modelsEntity.TaiKhoanEntity;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class ExampleEntity {
@@ -17,7 +16,7 @@ public class ExampleEntity {
                 "Chương trình khuyến mãi giảm giá 50% tất cả các món ăn trên thực đơn.",
                 new Date(),
                 new Date(),
-                "*0.5"
+                "", "*0.5"
         );
     }
     public static BuaAnEntity createExampleBuaAn(String id){
@@ -30,8 +29,19 @@ public class ExampleEntity {
                 "Sườn xào chua ngọt",
                 "Sườn rưới sốt me đậm vị hơn cho bữa ăn ngon",
                 ExampleEntity.createExampleKhuyenMai("KM0000000001"),
-                new NhomMonAnEntity("NA0000000001", "Bữa chính"),
+                MonAnEntity.MON_CHINH,
                 "/abc.jpg"
+        );
+    }
+
+    public static TaiKhoanEntity createExampleTaiKhoan(String id){
+        return new TaiKhoanEntity(
+                id,
+                "Nghia",
+                "nghiangominh99@gmail.com",
+                "123 Hàm Hồ",
+                "0123456789",
+                1
         );
     }
 }

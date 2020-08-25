@@ -27,7 +27,7 @@
                 android:text="Chưa có bữa ăn" />
 
             <Button
-                android:id="@+id/txtMealAction"
+                android:id="@+id/btnMealAction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtMealStatus"

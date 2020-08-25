@@ -68,6 +68,7 @@
                 android:id="@+id/txtLoginPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:layout_marginHorizontal="16dp"
                 android:hint="Mật khẩu" />
         </com.google.android.material.textfield.TextInputLayout>

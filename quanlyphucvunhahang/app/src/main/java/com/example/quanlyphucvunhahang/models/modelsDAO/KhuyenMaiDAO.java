@@ -19,11 +19,9 @@ import static android.content.ContentValues.TAG;
 public class KhuyenMaiDAO {
     private static final String FLAG = "KhuyenMai";
     private static final String SIMPLE = "KM";
-    public static String newID = null;
     private final int[] result = {0, 0, 0};
 
     public KhuyenMaiDAO() {
-        getNewID();
     }
 
     public Task getAll() {
@@ -40,43 +38,16 @@ public class KhuyenMaiDAO {
     }
 
     // Khuyen mai chi set, khong can kiem tra da ton tai khuyen mai nay hay chua
-    public int set(final KhuyenMaiEntity record) throws InterruptedException {
+    public Task<DocumentReference> add(final KhuyenMaiEntity record) {
         /* Thêm một khuyến mãi record */
-        result[0] = 0;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        Task task = db.collection(FLAG)
-                .document(record.getID())
-                .set(record)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        result[0] = 1;
-                        getNewID();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        result[0] = 0;
-                    }
-                });
-
-        // Kiem tra task da hoan tat chua
-        int i = 0;
-        while (!task.isComplete() && !task.isCanceled()) {
-            i++;
-            Thread.sleep(1);
-            if (i == 3000) {
-                result[0] = 2;
-                break;
-            }
-        }
-        return result[0];
+        return db.collection(FLAG).add(record);
     }
 
-    public int change(KhuyenMaiEntity newRecord) throws InterruptedException {
+    public Task<Void> change(KhuyenMaiEntity newRecord) {
         /* Cập nhật khuyến mãi có id trùng với newRecord, bằng newRecord */
-        return set(newRecord);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        return db.collection(FLAG).document(newRecord.getID()).set(newRecord);
     }
 
     public int delete(String id) throws InterruptedException {
@@ -90,7 +61,6 @@ public class KhuyenMaiDAO {
                     @Override
                     public void onSuccess(Void aVoid) {
                         result[1] = 1;
-                        getNewID();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -113,38 +83,38 @@ public class KhuyenMaiDAO {
         return result[1];
     }
 
-    // Gắn vào biến newID giá trị mới nhất
-    public void getNewID() {
-        /*Tìm ID cuối cùng và cộng 1 vào để tạo ID mới*/
-        getAll().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    Integer maxId = (newID == null)?1:Integer.parseInt(newID.substring(2));
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        String temp = document.getId().substring(2);
-                        Integer tempi = Integer.parseInt(temp);
-                        if(tempi > maxId){
-                            maxId = tempi;
-                        }
-                    }
-
-                    newID = createStringIdFromInteger(maxId + 1);
-                } else {
-                    Log.d(TAG, "Error getting documents: ", task.getException());
-                }
-            }
-        });
-    }
-
-    private String createStringIdFromInteger(Integer iID){
-        String res = SIMPLE;
-        String strNumber = iID.toString();
-        StringBuilder createZeros = new StringBuilder();
-        for(int i = 0; i < 10 - strNumber.length(); i++){
-            createZeros.append('0');
-        }
-
-        return res + createZeros.toString() + strNumber;
-    }
+//    // Gắn vào biến newID giá trị mới nhất
+//    public void getNewID() {
+//        /*Tìm ID cuối cùng và cộng 1 vào để tạo ID mới*/
+//        getAll().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    Integer maxId = (newID == null)?1:Integer.parseInt(newID.substring(2));
+//                    for (QueryDocumentSnapshot document : task.getResult()) {
+//                        String temp = document.getId().substring(2);
+//                        Integer tempi = Integer.parseInt(temp);
+//                        if(tempi > maxId){
+//                            maxId = tempi;
+//                        }
+//                    }
+//
+//                    newID = createStringIdFromInteger(maxId + 1);
+//                } else {
+//                    Log.d(TAG, "Error getting documents: ", task.getException());
+//                }
+//            }
+//        });
+//    }
+//
+//    private String createStringIdFromInteger(Integer iID){
+//        String res = SIMPLE;
+//        String strNumber = iID.toString();
+//        StringBuilder createZeros = new StringBuilder();
+//        for(int i = 0; i < 10 - strNumber.length(); i++){
+//            createZeros.append('0');
+//        }
+//
+//        return res + createZeros.toString() + strNumber;
+//    }
 }

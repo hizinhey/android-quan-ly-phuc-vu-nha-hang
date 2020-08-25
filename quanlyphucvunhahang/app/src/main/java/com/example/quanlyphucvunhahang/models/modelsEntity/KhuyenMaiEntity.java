@@ -5,18 +5,26 @@ import java.util.Date;
 public class KhuyenMaiEntity{
 
     // Constructor
-    public KhuyenMaiEntity(){};
-    public KhuyenMaiEntity(String ID, String strTen, String strMoTa, Date dateBatDau, Date dateKetThuc, String strPhuongThuc) {
+    public KhuyenMaiEntity(){
+    };
+
+    public KhuyenMaiEntity(String ID, String strTen, String strHinhAnh){
+        this.ID = ID;
+        this.strTen = strTen;
+        this.strHinhAnh = strHinhAnh;
+    }
+
+
+
+    public KhuyenMaiEntity(String ID, String strTen, String strMoTa, Date dateBatDau, Date dateKetThuc, String strHinhAnh, String strPhuongThuc) {
         this.ID = ID;
         this.strTen = strTen;
         this.strMoTa = strMoTa;
         DateBatDau = dateBatDau;
         DateKetThuc = dateKetThuc;
+        this.strHinhAnh = strHinhAnh;
         this.strPhuongThuc = strPhuongThuc;
     }
-
-    // Function
-    /* Thuong Entity khong can function*/
 
     // Getter and Setter
     public String getID() {
@@ -67,11 +75,20 @@ public class KhuyenMaiEntity{
         this.strPhuongThuc = strPhuongThuc;
     }
 
+    public String getStrHinhAnh() {
+        return strHinhAnh;
+    }
+
+    public void setStrHinhAnh(String strHinhAnh) {
+        this.strHinhAnh = strHinhAnh;
+    }
+
     // Biến
     private String ID;
     private String strTen;
     private String strMoTa;
     private Date DateBatDau;
     private Date DateKetThuc;
+    private String strHinhAnh;
     private String strPhuongThuc;
 }

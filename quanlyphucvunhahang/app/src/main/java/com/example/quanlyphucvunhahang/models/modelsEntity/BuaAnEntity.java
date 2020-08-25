@@ -1,11 +1,11 @@
 package com.example.quanlyphucvunhahang.models.modelsEntity;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class BuaAnEntity {
     private String ID;
-    private int banAn;
+    private String banAn;
     private List<ChiTietBuaAn> listChiTietBuaAn;
     private int hinhThucThanhToan;
     private TaiKhoanEntity khachHang;
@@ -13,7 +13,7 @@ public class BuaAnEntity {
     private int trangThai;
 
     public BuaAnEntity(){}
-    public BuaAnEntity(String ID, int banAn, List<ChiTietBuaAn> listChiTietBuaAn,
+    public BuaAnEntity(String ID, String banAn, List<ChiTietBuaAn> listChiTietBuaAn,
                        int hinhThucThanhToan, TaiKhoanEntity khachHang, String nhanXet,
                        int trangThai) {
         this.ID = ID;
@@ -49,11 +49,11 @@ public class BuaAnEntity {
         this.khachHang = khachHang;
     }
 
-    public int getBanAn() {
+    public String getBanAn() {
         return banAn;
     }
 
-    public void setBanAn(int banAn) {
+    public void setBanAn(String banAn) {
         this.banAn = banAn;
     }
 
@@ -64,7 +64,6 @@ public class BuaAnEntity {
     public void setHinhThucThanhToan(int hinhThucThanhToan) {
         this.hinhThucThanhToan = hinhThucThanhToan;
     }
-
 
     public List<ChiTietBuaAn> getListChiTietBuaAn() {
         return listChiTietBuaAn;
@@ -85,15 +84,17 @@ public class BuaAnEntity {
     public String strHinhThucThanhToan()
     {
         if (hinhThucThanhToan == 0)
-            return ("Tien Mat");
+            return ("Tiền mặt");
         else
             return ("Online");
     }
 
     public String strTrangThai()
     {
-        if (trangThai == 0)
-            return ("Dang An");
-        return ("Hoan Tat Bua An");
+        if (trangThai == 1)
+            return ("Đang có bữa ăn");
+        if (trangThai == 2)
+            return ("Kết thúc bữa ăn");
+        return ("Chưa có bữa ăn");
     }
 }

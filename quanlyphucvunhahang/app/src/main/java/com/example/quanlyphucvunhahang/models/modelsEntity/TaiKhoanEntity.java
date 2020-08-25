@@ -3,7 +3,6 @@ package com.example.quanlyphucvunhahang.models.modelsEntity;
 public class TaiKhoanEntity {
     //Thuoc tinh
     private String ID;
-    private String user;
     private String ten;
     private String email;
     private String diachi;
@@ -20,14 +19,6 @@ public class TaiKhoanEntity {
 
     public void setID(String ID) {
         this.ID = ID;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
     }
 
     public String getTen() {
@@ -70,9 +61,8 @@ public class TaiKhoanEntity {
         this.phanQuyen = phanQuyen;
     }
 
-    public TaiKhoanEntity(String ID, String user, String ten, String email, String diachi, String sdt, int phanQuyen) {
+    public TaiKhoanEntity(String ID,  String ten, String email, String diachi, String sdt, int phanQuyen) {
         this.ID = ID;
-        this.user = user;
         this.ten = ten;
         this.email = email;
         this.diachi = diachi;

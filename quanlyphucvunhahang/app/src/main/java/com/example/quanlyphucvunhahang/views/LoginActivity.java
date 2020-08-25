@@ -84,7 +84,7 @@ public class LoginActivity extends Activity {
                             });
                     alertDialog.show();
                 } else {
-                    TaiKhoanDAO dao = new TaiKhoanDAO();
+                    final TaiKhoanDAO dao = new TaiKhoanDAO();
 
                     final ProgressDialog pd = new ProgressDialog(LoginActivity.this);
                     pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -98,11 +98,26 @@ public class LoginActivity extends Activity {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        String id = user.getUid();
-                                        Intent intent = new Intent(getApplication(), HomeActivity.class);
-                                        intent.putExtra("USER", id);
-                                        pd.dismiss();
-                                        startActivity(intent);
+                                        final String id = user.getUid();
+                                        System.out.println(id);
+
+                                        dao.get(id).addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onSuccess(DocumentSnapshot o) {
+                                                TaiKhoanEntity taiKhoanEntity = o.toObject(TaiKhoanEntity.class);
+                                                System.out.println(taiKhoanEntity.getEmail());
+                                                if(taiKhoanEntity != null && taiKhoanEntity.getPhanQuyen() == 2){
+                                                    Intent intent = new Intent(getApplication(), HomeActivity.class);
+                                                    intent.putExtra("USER", id);
+
+                                                    startActivity(intent);
+                                                } else {
+                                                    mAuth.signOut();
+                                                }
+                                                pd.dismiss();
+                                            }
+                                        });
+
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Toast.makeText(LoginActivity.this, "Đăng nhập thất bại",
@@ -111,7 +126,6 @@ public class LoginActivity extends Activity {
                                     }
                                 }
                             });
-
                 }
             }
         });

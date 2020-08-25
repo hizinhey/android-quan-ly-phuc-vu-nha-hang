@@ -23,7 +23,6 @@ public class TaiKhoanDAO {
     private final int[] result = {0, 0, 0};
 
     public TaiKhoanDAO() {
-        getNewID();
     }
 
     public Task getAll() {
@@ -51,7 +50,6 @@ public class TaiKhoanDAO {
                     @Override
                     public void onSuccess(Void aVoid) {
                         result[0] = 1;
-                        getNewID();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -90,7 +88,6 @@ public class TaiKhoanDAO {
                     @Override
                     public void onSuccess(Void aVoid) {
                         result[1] = 1;
-                        getNewID();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

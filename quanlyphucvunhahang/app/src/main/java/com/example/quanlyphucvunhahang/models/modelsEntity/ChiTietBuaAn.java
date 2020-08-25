@@ -29,7 +29,13 @@ public class ChiTietBuaAn {
 
     public String strTrangThai() {
         if (trangThai==0)
-            return ("Dang chuan bi");
-        return ("Hoan thanh");
+            return ("Đang chuẩn bị");
+        return ("Hoàn thành");
+    }
+
+    public String colorTrangThai(){
+        if (trangThai==0)
+            return ("#6c757d");
+        return ("#2b9348");
     }
 }

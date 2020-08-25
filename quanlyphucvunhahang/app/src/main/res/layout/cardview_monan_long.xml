@@ -33,4 +33,13 @@
         android:gravity="center"
         android:text="99$"
         android:textSize="36sp" />
+    <TextView
+        android:id="@+id/lblCVLMonAnTrangThai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblCVLMonAnGia"
+        android:text="Đang thực hiện"
+        android:layout_marginTop="10dp"
+        android:textColor="#6c757d"
+        android:layout_alignParentEnd="true"/>
 </RelativeLayout>

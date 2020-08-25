@@ -7,17 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MonAnEntity {
+    public static final String KHAI_VI = "Khai vị";
+    public static final String MON_CHINH = "Món chính";
+    public static final String TRANG_MIENG = "Tráng miệng";
+    public static final String MON_NUOC = "Món nước";
+
     private String ID;
     private Float gia;
     private String tenMonAn;
     private String moTa;
     private KhuyenMaiEntity khuyenMai;
-    private NhomMonAnEntity nhomMonAn;
+    private String nhomMonAn;
     private String linkHinhAnh;
 
     public MonAnEntity() {}
 
-    public MonAnEntity(String ID, Float gia, String tenMonAn, String moTa, KhuyenMaiEntity khuyenMai, NhomMonAnEntity nhomMonAn, String linkHinhAnh) {
+    public MonAnEntity(String ID, Float gia, String tenMonAn, String moTa, KhuyenMaiEntity khuyenMai, String nhomMonAn, String linkHinhAnh) {
         this.ID = ID;
         this.gia = gia;
         this.tenMonAn = tenMonAn;
@@ -67,11 +72,11 @@ public class MonAnEntity {
         this.khuyenMai = khuyenMai;
     }
 
-    public NhomMonAnEntity getNhomMonAn() {
+    public String getNhomMonAn() {
         return nhomMonAn;
     }
 
-    public void setNhomMonAn(NhomMonAnEntity nhomMonAn) {
+    public void setNhomMonAn(String nhomMonAn) {
         this.nhomMonAn = nhomMonAn;
     }
 

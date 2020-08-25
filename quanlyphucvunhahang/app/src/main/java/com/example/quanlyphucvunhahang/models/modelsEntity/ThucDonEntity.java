@@ -4,13 +4,11 @@ import java.util.List;
 
 public class ThucDonEntity {
     private BuaAnEntity buaAn;
-    private List<ChiTietThucDon> chiTiet;
     private TaiKhoanEntity khachHang;
     private long tongTien;
 
-    public ThucDonEntity(BuaAnEntity buaAn, List<ChiTietThucDon> chiTiet, TaiKhoanEntity khachHang, long tongTien) {
+    public ThucDonEntity(BuaAnEntity buaAn, TaiKhoanEntity khachHang, long tongTien) {
         this.buaAn = buaAn;
-        this.chiTiet = chiTiet;
         this.khachHang = khachHang;
         this.tongTien = tongTien;
     }
@@ -23,14 +21,6 @@ public class ThucDonEntity {
 
     public void setBuaAn(BuaAnEntity buaAn) {
         this.buaAn = buaAn;
-    }
-
-    public List<ChiTietThucDon> getChiTiet() {
-        return chiTiet;
-    }
-
-    public void setChiTiet(List<ChiTietThucDon> chiTiet) {
-        this.chiTiet = chiTiet;
     }
 
     public TaiKhoanEntity getKhachHang() {
