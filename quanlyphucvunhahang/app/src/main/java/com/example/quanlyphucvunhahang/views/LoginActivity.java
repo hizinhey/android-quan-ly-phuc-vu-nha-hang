@@ -22,6 +22,7 @@ import androidx.annotation.Nullable;
 
 import com.example.quanlyphucvunhahang.MainActivity;
 import com.example.quanlyphucvunhahang.R;
+import com.example.quanlyphucvunhahang.models.modelsDAO.LichSuDAO;
 import com.example.quanlyphucvunhahang.models.modelsDAO.TaiKhoanDAO;
 import com.example.quanlyphucvunhahang.models.modelsEntity.TaiKhoanEntity;
 import com.google.android.gms.tasks.OnCompleteListener;

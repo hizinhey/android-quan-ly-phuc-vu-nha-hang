@@ -21,6 +21,7 @@ import com.example.managerapp.models.modelsEntity.MonAnEntity;
 import com.example.managerapp.models.modelsEntity.TaiKhoanEntity;
 import com.example.managerapp.viewmodels.HomeViewModel;
 import com.example.managerapp.views.fragment.DeleteFragment;
+import com.example.managerapp.views.fragment.QuanLyBuaAnFragment;
 import com.example.managerapp.views.fragment.UserFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -40,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     // Fragment
     DeleteFragment deleteFragment;
     UserFragment userFragment;
+    QuanLyBuaAnFragment quanLyBuaAnFragment;
 
     HomeViewModel homeViewModel;
 
@@ -67,9 +69,9 @@ public class HomeActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.page_1:
-                    //homeFragment = new HomeFragment();
+                    quanLyBuaAnFragment = new QuanLyBuaAnFragment();
                     toolbar.setTitle("Quản lý");
-                    //loadFragment(homeFragment);
+                    loadFragment(quanLyBuaAnFragment);
                     return true;
                 case R.id.page_2:
                     //mealFragment = new MealFragment();
@@ -126,6 +128,27 @@ public class HomeActivity extends AppCompatActivity {
                                                        }
 
                                                        homeViewModel.setmListMonAn(list);
+                                                   }
+
+                                               }
+                                           }
+        );
+
+        BuaAnDAO buaAnDAO = new BuaAnDAO();
+        buaAnDAO.getAll().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                               @Override
+                                               public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                   if (task.isSuccessful()) {
+                                                       List<BuaAnEntity> list = new ArrayList<>();
+
+                                                       for (QueryDocumentSnapshot document : task.getResult()) {
+                                                           BuaAnEntity buaAnEntity = document.toObject(BuaAnEntity.class);
+                                                           list.add(buaAnEntity);
+                                                       }
+
+                                                       homeViewModel.setmListBuaAn(list);
+                                                       quanLyBuaAnFragment = new QuanLyBuaAnFragment();
+                                                       loadFragment(quanLyBuaAnFragment);
                                                    }
 
                                                }

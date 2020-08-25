@@ -18,9 +18,11 @@ import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.example.quanlyphucvunhahang.R;
 import com.example.quanlyphucvunhahang.models.modelsDAO.BuaAnDAO;
+import com.example.quanlyphucvunhahang.models.modelsDAO.LichSuDAO;
 import com.example.quanlyphucvunhahang.models.modelsDAO.MonAnDAO;
 import com.example.quanlyphucvunhahang.models.modelsDAO.TaiKhoanDAO;
 import com.example.quanlyphucvunhahang.models.modelsEntity.BuaAnEntity;
+import com.example.quanlyphucvunhahang.models.modelsEntity.LichSuEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.MonAnEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.TaiKhoanEntity;
 import com.example.quanlyphucvunhahang.viewmodels.HomeViewModel;
@@ -163,5 +165,14 @@ public class HomeActivity extends AppCompatActivity {
                                                   }
                                               }
         );
+
+        LichSuDAO lichSuDAO = new LichSuDAO();
+        lichSuDAO.get(id).addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot o) {
+                LichSuEntity lichSuEntity = o.toObject(LichSuEntity.class);
+                homeViewModel.getmLichSu().setValue(lichSuEntity);
+            }
+        });
     }
 }

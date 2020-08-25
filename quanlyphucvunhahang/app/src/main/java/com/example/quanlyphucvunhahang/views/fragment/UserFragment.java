@@ -17,7 +17,7 @@ import com.example.quanlyphucvunhahang.R;
 import com.example.quanlyphucvunhahang.models.modelsEntity.TaiKhoanEntity;
 import com.example.quanlyphucvunhahang.viewmodels.HomeViewModel;
 
-public class UserFragment extends Fragment implements LifecycleOwner {
+public class UserFragment extends Fragment{
     private HomeViewModel mViewModel;
     private TextView txtEmail; // User
     private TextView txtName;

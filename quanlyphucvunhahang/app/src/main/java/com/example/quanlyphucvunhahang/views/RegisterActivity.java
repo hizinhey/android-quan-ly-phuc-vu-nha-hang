@@ -13,7 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.quanlyphucvunhahang.R;
+import com.example.quanlyphucvunhahang.models.modelsDAO.LichSuDAO;
 import com.example.quanlyphucvunhahang.models.modelsDAO.TaiKhoanDAO;
+import com.example.quanlyphucvunhahang.models.modelsEntity.ChiTietLichSu;
+import com.example.quanlyphucvunhahang.models.modelsEntity.LichSuEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.TaiKhoanEntity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,6 +24,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 public class RegisterActivity extends Activity {
     TextInputLayout email;
@@ -70,15 +75,18 @@ public class RegisterActivity extends Activity {
                                 System.out.println(task.getResult().getUser().getUid());
 
                                 TaiKhoanDAO dao = new TaiKhoanDAO();
+                                LichSuDAO lichSuDAO = new LichSuDAO();
+
                                 TaiKhoanEntity user = new TaiKhoanEntity(
                                         task.getResult().getUser().getUid(),
                                         sname,
                                         semail,
-                                        sphone,
                                         saddress,
+                                        sphone,
                                         2);
                                 try {
                                     dao.set(user);
+                                    lichSuDAO.change(new LichSuEntity(new ArrayList<ChiTietLichSu>(), user, 0));
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }

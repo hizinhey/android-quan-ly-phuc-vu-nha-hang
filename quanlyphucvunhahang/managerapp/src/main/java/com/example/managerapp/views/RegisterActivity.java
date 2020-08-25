@@ -74,8 +74,8 @@ public class RegisterActivity extends Activity {
                                         task.getResult().getUser().getUid(),
                                         sname,
                                         semail,
-                                        sphone,
                                         saddress,
+                                        sphone,
                                         1);
                                 try {
                                     dao.set(user);

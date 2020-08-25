@@ -116,6 +116,9 @@ public class MealFragment extends Fragment {
                         @Override
                         public void onClick(View v) {
                             //TODO: Gởi yêu cầu kết thúc
+                            BuaAnDAO buaAnDAO = new BuaAnDAO();
+                            buaAn.setTrangThai(2);
+                            buaAnDAO.set(buaAn.getID(), buaAn);
                         }
                     });
                 } else if (info.getTrangThai() == 2) {

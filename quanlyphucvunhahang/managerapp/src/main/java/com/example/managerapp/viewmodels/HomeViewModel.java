@@ -5,14 +5,10 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModelStore;
-import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.example.managerapp.models.modelsEntity.BuaAnEntity;
-import com.example.managerapp.models.modelsEntity.KhuyenMaiEntity;
 import com.example.managerapp.models.modelsEntity.MonAnEntity;
 import com.example.managerapp.models.modelsEntity.TaiKhoanEntity;
-import com.example.managerapp.models.modelsEntity.ThucDonEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +16,7 @@ import java.util.List;
 public class HomeViewModel extends AndroidViewModel{
     private MutableLiveData<TaiKhoanEntity> mTaiKhoan = new MutableLiveData<>();
     private MutableLiveData<List<MonAnEntity>> mListMonAn = new MutableLiveData<>();
+    private MutableLiveData<List<BuaAnEntity>> mListBuaAn = new MutableLiveData<>();
 
     private MutableLiveData<Boolean> isReady = new MutableLiveData<>();
 
@@ -29,6 +26,7 @@ public class HomeViewModel extends AndroidViewModel{
 
         mListMonAn.setValue(new ArrayList<MonAnEntity>());
         mTaiKhoan.setValue(new TaiKhoanEntity());
+        mListBuaAn.setValue(new ArrayList<BuaAnEntity>());
     }
 
     public MutableLiveData<TaiKhoanEntity> getmTaiKhoan() {
@@ -53,5 +51,13 @@ public class HomeViewModel extends AndroidViewModel{
 
     public void setmListMonAn(List<MonAnEntity> mListMonAn) {
         this.mListMonAn.setValue(mListMonAn);
+    }
+
+    public MutableLiveData<List<BuaAnEntity>> getmListBuaAn() {
+        return mListBuaAn;
+    }
+
+    public void setmListBuaAn(List<BuaAnEntity> mListBuaAn) {
+        this.mListBuaAn.setValue(mListBuaAn);
     }
 }

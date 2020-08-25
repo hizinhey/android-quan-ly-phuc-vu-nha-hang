@@ -12,7 +12,7 @@ import com.example.quanlyphucvunhahang.models.modelsEntity.BuaAnEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.KhuyenMaiEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.MonAnEntity;
 import com.example.quanlyphucvunhahang.models.modelsEntity.TaiKhoanEntity;
-import com.example.quanlyphucvunhahang.models.modelsEntity.ThucDonEntity;
+import com.example.quanlyphucvunhahang.models.modelsEntity.LichSuEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class HomeViewModel extends AndroidViewModel{
     private MutableLiveData<List<MonAnEntity>> mListMonAnTrangMieng = new MutableLiveData<>();
     private MutableLiveData<List<MonAnEntity>> mListMonAnMonNuoc = new MutableLiveData<>();
     private MutableLiveData<List<KhuyenMaiEntity>> mKhuyenMai = new MutableLiveData<>();
-    private MutableLiveData<ThucDonEntity> mThucDon = new MutableLiveData<>();
+    private MutableLiveData<LichSuEntity> mLichSu = new MutableLiveData<>();
 
     private MutableLiveData<Boolean> isReady = new MutableLiveData<>();
 
@@ -40,7 +40,7 @@ public class HomeViewModel extends AndroidViewModel{
         mListMonAnMonNuoc.setValue(new ArrayList<MonAnEntity>());
         mListMonAnTrangMieng.setValue(new ArrayList<MonAnEntity>());
         mKhuyenMai.setValue(new ArrayList<KhuyenMaiEntity>());
-        mThucDon.setValue(new ThucDonEntity());
+        mLichSu.setValue(new LichSuEntity());
     }
 
     public MutableLiveData<TaiKhoanEntity> getmTaiKhoan() {
@@ -91,12 +91,12 @@ public class HomeViewModel extends AndroidViewModel{
         this.mListMonAnMonNuoc.setValue(mListMonAnMonNuoc);
     }
 
-    public MutableLiveData<ThucDonEntity> getmThucDon() {
-        return mThucDon;
+    public MutableLiveData<LichSuEntity> getmLichSu() {
+        return mLichSu;
     }
 
-    public void setmThucDon(ThucDonEntity mThucDon) {
-        this.mThucDon.setValue(mThucDon);
+    public void setmLichSu(LichSuEntity mLichSu) {
+        this.mLichSu.setValue(mLichSu);
     }
 
     public MutableLiveData<List<KhuyenMaiEntity>> getmKhuyenMai() {
