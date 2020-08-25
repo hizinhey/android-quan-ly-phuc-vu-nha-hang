@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="8dp"
+    android:elevation="25dp"
+    android:background="@drawable/border_with_shadow"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/item_delete_img"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginVertical="25dp"/>
+    <TextView
+        android:id="@+id/item_delete_tenmonan"
+        android:layout_toEndOf="@id/item_delete_img"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/item_delete_button"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:gravity="center_vertical"/>
+    <Button
+        android:id="@+id/item_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Xóa"/>
+</RelativeLayout>
