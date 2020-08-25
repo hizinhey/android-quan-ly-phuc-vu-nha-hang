@@ -20,6 +20,7 @@ import com.example.managerapp.models.modelsEntity.BuaAnEntity;
 import com.example.managerapp.models.modelsEntity.MonAnEntity;
 import com.example.managerapp.models.modelsEntity.TaiKhoanEntity;
 import com.example.managerapp.viewmodels.HomeViewModel;
+import com.example.managerapp.views.fragment.AddFragment;
 import com.example.managerapp.views.fragment.DeleteFragment;
 import com.example.managerapp.views.fragment.QuanLyBuaAnFragment;
 import com.example.managerapp.views.fragment.UserFragment;
@@ -42,6 +43,7 @@ public class HomeActivity extends AppCompatActivity {
     DeleteFragment deleteFragment;
     UserFragment userFragment;
     QuanLyBuaAnFragment quanLyBuaAnFragment;
+    AddFragment addFragment;
 
     HomeViewModel homeViewModel;
 
@@ -74,9 +76,9 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(quanLyBuaAnFragment);
                     return true;
                 case R.id.page_2:
-                    //mealFragment = new MealFragment();
+                    addFragment = new AddFragment();
                     toolbar.setTitle("Thêm món ăn");
-                    //loadFragment(mealFragment);
+                    loadFragment(addFragment);
                     return true;
                 case R.id.page_3:
                     deleteFragment = new DeleteFragment();

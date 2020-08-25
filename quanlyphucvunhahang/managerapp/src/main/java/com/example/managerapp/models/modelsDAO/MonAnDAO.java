@@ -1,20 +1,9 @@
 package com.example.managerapp.models.modelsDAO;
 
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-
 import com.example.managerapp.models.modelsEntity.MonAnEntity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import static android.content.ContentValues.TAG;
 
 public class MonAnDAO {
     private static final String FLAG = "MonAn";
@@ -46,8 +35,7 @@ public class MonAnDAO {
         return FirebaseFirestore.getInstance().collection(FLAG).document(newRecord.getID()).set(newRecord);
     }
 
-    public int delete(String id) {
-
-        return 0;
+    public Task<Void> delete(String id) {
+        return FirebaseFirestore.getInstance().collection(FLAG).document(id).delete();
     }
 }

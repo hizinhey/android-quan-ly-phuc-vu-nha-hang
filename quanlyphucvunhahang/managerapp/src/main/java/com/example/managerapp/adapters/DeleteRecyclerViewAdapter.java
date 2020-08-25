@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -15,7 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.managerapp.GlideApp;
 import com.example.managerapp.R;
+import com.example.managerapp.models.modelsDAO.MonAnDAO;
 import com.example.managerapp.models.modelsEntity.MonAnEntity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -50,6 +54,26 @@ public class DeleteRecyclerViewAdapter extends RecyclerView.Adapter<DeleteRecycl
                 .into(holder.imageView);
 
         //TODO: thêm sự kiện xóa món ăn
+
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MonAnDAO dao = new MonAnDAO();
+                dao.delete(item.getID())
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(mContext, "Xóa thành công.", Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(mContext, "Xóa thất bại.", Toast.LENGTH_LONG).show();
+                            }
+                        });
+            }
+        });
     }
 
     @Override
@@ -62,6 +86,7 @@ public class DeleteRecyclerViewAdapter extends RecyclerView.Adapter<DeleteRecycl
         public TextView textView;
         public ImageView imageView;
         public Button button;
+
         public ViewHolder(View view) {
             super(view);
             textView = view.findViewById(R.id.item_delete_tenmonan);

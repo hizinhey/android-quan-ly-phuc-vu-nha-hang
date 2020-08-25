@@ -16,6 +16,8 @@ import com.example.quanlyphucvunhahang.models.modelsEntity.ChiTietBuaAn;
 import com.example.quanlyphucvunhahang.models.modelsEntity.ChiTietLichSu;
 import com.example.quanlyphucvunhahang.models.modelsEntity.MonAnEntity;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
@@ -41,7 +43,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         ChiTietLichSu chiTietLichSu = list.get(position);
         holder.Khach.setText(chiTietLichSu.getBuaAn().getKhachHang().getTen());
         holder.BanAn.setText("Bàn ăn: " + chiTietLichSu.getBuaAn().getBanAn());
-        holder.ThoiGian.setText("Thời gian: " + chiTietLichSu.getTime().toString());
+
+        Date date = chiTietLichSu.getTime();
+
+        holder.ThoiGian.setText("Thời gian: " + DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).format(date));
 
         float a = 0;
         for(ChiTietBuaAn element: chiTietLichSu.getBuaAn().getListChiTietBuaAn()){
